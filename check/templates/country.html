@@ -1,0 +1,89 @@
+{% extends 'base.html'%}
+{% block content %}
+    <div class="container-md">
+
+      <div class="row">
+        <div class="col-3"></div>
+        <div class="col-6">
+
+          <div class="form-group ">
+            <label for="confirmed" class="d-flex justify-content-center lab">Confirmed:</label>
+            <input type="text" class="form-control incls " id="confirmed" />
+          </div>
+          <div class="form-group">
+            <label for="recovered" class="d-flex justify-content-center lab">Recovered:</label>
+            <input type="text" class="form-control incls " id="recovered" />
+          </div>
+          <div class="form-group">
+            <label for="deaths" class="d-flex justify-content-center lab">Deaths:</label>
+
+            <input type="text" class="form-control incls " id="deaths" />
+          </div>
+
+        </div>
+        <div class="col-3"></div>
+      </div>
+      <div class="row h-25">
+        <div class="col-3">
+
+        </div>
+
+        <div class="col-6 ">
+          <form action="{%url 'state'%}">
+          <div class="form-group d-flex justify-content-center">
+             <select name="select" class="form-control sels " onclick="abc()" id="sel1">
+              {% for i in c_list%}
+              <option value={{i}}>{{i.capitalize}}</option>
+              {% endfor %}
+              </select>
+              <input type='submit' class="submit" value=""></input>
+            
+          </div>
+        </form>
+          <br>
+        </div>
+        <div class="col-3">
+          <label class="labeldead" name="select_country" id="selfinal"></label>
+        </div>
+
+      </div>
+
+    </div>
+    <div class="container-md ">
+      <div class="row">
+        <div class="col-8">
+          <div class="card gfg">
+            <div class="card-header d-flex justify-content-center">News</div>
+            <div id = "news_list" class="card-body m-1 p-1">Loading News....</div>
+          </div> 
+        </div>
+
+        <div class="col-4 border" id="aboutmakers">
+          About makers
+        </div>
+
+      </div>
+    </div>
+
+  </main><!-- /.container -->
+  <script>
+    var global_data = {{ dict| safe}};
+    document.getElementById("confirmed").value = global_data[0];
+    document.getElementById("recovered").value = global_data[1];
+    document.getElementById("deaths").value = global_data[2];
+  
+    // document.getElementById("aboutmakers").innerHTML= document.getElementById("dropbutton").value
+    var x = 0;
+    var news_array = {{ news_list|safe }};
+    var link_array  ={{ news_link|safe }};
+    
+    setInterval(
+  function () {if(x>=news_array.length)
+  {x=0;}
+  $("#slide").slideUp("fast");
+  document.getElementById("news_list").innerHTML = "<a class='abeaut' id='slide' href='"+link_array[x]+"'>"+news_array[x];+"</a>";
+   x+=1;
+  },5000);
+  </script>
+  
+{% endblock %}

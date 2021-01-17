@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+{% load static %}
+
+<head>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+  <meta name="generator" content="Jekyll v4.0.1">
+  <title>Starter Template · Bootstrap</title>
+
+  <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/starter-template/">
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+  <!-- JS, Popper.js, and jQuery -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+    integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+    crossorigin="anonymous"></script>
+  <!-- Favicons -->
+  <meta name="msapplication-config" content="/docs/4.5/assets/img/favicons/browserconfig.xml">
+  <meta name="theme-color" content="#563d7c">
+
+
+  <style>
+    .bd-placeholder-img {
+      font-size: 1.125rem;
+      text-anchor: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+    input.submit{
+        background-color: #5F4B8BFF;
+        width: auto;
+        height: auto;
+    }
+
+    body {
+      /* background-image: url("{% static 'bg2.jpg'%}"); */
+      /* background-color:#E69A8DFF; */
+    }
+    div.bg{
+
+        background-image: url("{% static 'background.jpg'%}");
+
+  /* Full height */
+  height: 100%; 
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+    }
+
+    @media (min-width: 768px) {
+      .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+      }
+    }
+
+    .incl {
+      text-align: center;
+      font-size: xx-large;
+      color: #E69A8DFF;
+
+    }
+
+    .incls {
+      text-align: center;
+      font-size: x-large;
+      color: #5F4B8BFF;
+      background-color: #E69A8DFF;
+    }
+
+    div.gfg {
+      margin: auto;
+      padding: auto;
+      background:transparent;
+      /* background-color: #5F4B8BFF; */
+      width: auto;
+      color: black;
+      height: auto;
+      overflow: auto;
+      text-align: justify;
+    }
+
+    nav.navba {
+      background-color: #E69A8DFF;
+
+    }
+
+
+    label.lab {
+      font-size: large;
+      color:#5F4B8BFF;
+
+    }
+
+    select.sels {
+      width: 300px;
+      background-color: #5F4B8BFF;
+      color:#E69A8DFF;
+    }
+    a.abeaut{
+      color:rgb(255, 0, 0);
+    }
+    button.custom{
+      background-color: #E69A8DFF;
+    }
+    span.tog{
+        color: #5F4B8BFF;
+        background-image:url({% static 'navbar.png'%})
+    }
+
+    label.labeldead {
+      width: 0.2px;
+      height: 0.2px;
+    }
+
+    .footer {
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color:#E69A8DFF;
+   color: white;
+   text-align: center;
+}
+  </style>
+  <!-- Custom styles for this template -->
+  <link href="starter-template.css" rel="stylesheet">
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-sm navba">
+    <a class="navbar-brand" href="{% url 'home' %}">CovidTracker</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon tog"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-item nav-link active" href="{% url 'home' %}">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-item nav-link" href="#">News</a>
+      </div>
+      <div class="navbar-nav ml-auto">
+        <a class="nav-item nav-link" href="#">About Us</a>
+        <a class="nav-item nav-link disabled" href="#">Contact</a>
+      </div>
+      </div>
+    </div>
+  </nav>
+  
+  <div class="bg">
+  <main role="main" class="container-sm">
+    
+    {% block content %}
+
+    {% endblock %}
+        
+    <div class="footer-copyright text-center py-3">
+        Ayush Payasi Copyright © 2020, LastUpdated {{ date1 }}
+    </div>
+
+</main><!-- /.container -->
+</div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+</body>
+
+</html>
